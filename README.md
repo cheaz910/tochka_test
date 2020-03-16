@@ -1,13 +1,14 @@
 # Тестовое задание
----
 Использовано:
 * Django
 * Celery + Redis (для асинхронных задач)
 * Nginx
----
 ## Usage:
     $ docker-compose up
 ---
+#### admin-panel  
+  login: admin  
+  password: 123456
 ## API
 ### POST /api/add 
 json request:
