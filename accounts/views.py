@@ -30,7 +30,6 @@ def api_substract(request):
     def substract_operation(account, value):
         if account.balance - account.hold - value < 0:
             raise ValueError("operation is impossible")
-        account.balance -= value
         account.hold += value
         account.save()
         return {
@@ -51,6 +50,7 @@ def api_status(request):
             "addition": {
                 "uuid": account.uuid,
                 "balance": account.balance,
+                "hold": account.hold,
                 "status": account.status
             },
             "description": {}
